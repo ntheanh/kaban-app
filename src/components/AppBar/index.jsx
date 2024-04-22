@@ -16,6 +16,9 @@ import Tooltip from "@mui/material/Tooltip"
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline"
 import Profiles from "./Menus/Profiles"
 
+import LibraryAddIcon from "@mui/icons-material/LibraryAdd"
+
+
 const Board = () => {
   return (
     <Box
@@ -25,7 +28,11 @@ const Board = () => {
         height: (theme) => theme.trelloCustom.appBarHeight,
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between"
+
+        justifyContent: "space-between",
+        px: 2,
+        gap: 2
+
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -47,7 +54,11 @@ const Board = () => {
         <Recent />
         <Starred />
         <Templates />
-        <Button variant="outlined">Create</Button>
+
+        <Button variant="outlined" startIcon={<LibraryAddIcon />}>
+          Create
+        </Button>
+
       </Box>
       <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
         <TextField
