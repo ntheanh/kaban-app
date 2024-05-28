@@ -107,7 +107,9 @@ const Board = () => {
         />
         <ModeSelect />
         <Tooltip title="Notification">
-          <Badge color="secondary" variant="dot" sx={{ cursor: "pointer" }}>
+
+          <Badge color="warning" variant="dot" sx={{ cursor: "pointer" }}>
+
             <NotificationsNoneIcon sx={{ color: "white" }} />
           </Badge>
         </Tooltip>
