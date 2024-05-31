@@ -12,6 +12,7 @@ import Menu from "@mui/material/Menu"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 
 import { useState } from "react"
+import Box from "@mui/material/Box"
 
 const Workspaces = () => {
   const [anchorEl, setAnchorEl] = useState(null)
@@ -24,7 +25,7 @@ const Workspaces = () => {
     setAnchorEl(null)
   }
   return (
-    <>
+    <Box>
       <Button
         sx={{ color: "white" }}
         id="basic-button-workspaces"
@@ -80,7 +81,7 @@ const Workspaces = () => {
           <ListItemText>Web Clipboard</ListItemText>
         </MenuItem>
       </Menu>
-    </>
+    </Box>
   )
 }
 

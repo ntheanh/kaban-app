@@ -42,8 +42,20 @@ const theme = extendTheme({
           fontSize: "0.875rem"
         })
       }
-    }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: ({
+          "&.MuiTypography-body1": {
+            fontSize: "0.875rem"
+          }
+
+        })
+      }
+    },
   }
+
+
 })
 
 export default theme
