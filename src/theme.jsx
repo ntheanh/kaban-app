@@ -11,10 +11,26 @@ const theme = extendTheme({
     boardContentHeight: BOARD_CONTENT_HEIGHT
   },
   colorSchemes: {
-
-
   },
   components: {
+    // MuiCssBaseline: {
+    //   styleOverrides: {
+    //     scrollbarWidth: "thin",
+    //     "*::-webkit-scrollbar": {
+    //       width: "0.4em"
+    //     },
+    //     "*::-webkit-scrollbar-track": {
+    //       background: "#f1f1f1"
+    //     },
+    //     "*::-webkit-scrollbar-thumb": {
+    //       backgroundColor: "#888"
+    //     },
+    //     "*::-webkit-scrollbar-thumb:hover": {
+    //       background: "#555"
+    //     },
+    //   }
+    // },
+
     MuiButton: {
       styleOverrides: {
         root: {
@@ -24,7 +40,6 @@ const theme = extendTheme({
     },
     MuiOutlinedInput: {
       styleOverrides: {
-
         root: ({
           fontSize: "0.875rem",
           "& fieldset": { borderWidth: "0.5px !important" },
