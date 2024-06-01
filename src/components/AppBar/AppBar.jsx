@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ModeSelect from "~/components/ModeSelect"
+import ModeSelect from "~/components/ModeSelect/ModeSelect"
 import Box from "@mui/material/Box"
 import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
@@ -107,9 +107,7 @@ const Board = () => {
         />
         <ModeSelect />
         <Tooltip title="Notification">
-
           <Badge color="warning" variant="dot" sx={{ cursor: "pointer" }}>
-
             <NotificationsNoneIcon sx={{ color: "white" }} />
           </Badge>
         </Tooltip>
