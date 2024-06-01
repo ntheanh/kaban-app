@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import Box from "@mui/material/Box"
 import ListColumns from "./ListColumns/ListColumns"
 
-const BoardContent = () => {
+const BoardContent = ({ board }) => {
   return (
     <Box
       sx={{
@@ -13,7 +14,7 @@ const BoardContent = () => {
       }}
       Box
     >
-      <ListColumns />
+      <ListColumns columns={board.columns} />
     </Box>
   )
 }

@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import Box from "@mui/material/Box"
 import Card from "./Card/Card"
 // import TrelloCard from "./Card/Card"
 
-const ListCards = () => {
+const ListCards = ({ cards }) => {
   return (
     <Box
       sx={{
@@ -26,6 +27,7 @@ const ListCards = () => {
         "&::-webkit-scrollbar-thumb:hover": {
           background: "#555"
         },
+
         maxHeight: (theme) => `calc(
           ${theme.trelloCustom.boardContentHeight} - 
           ${theme.spacing(4)} -
@@ -34,11 +36,9 @@ const ListCards = () => {
         )`
       }}
     >
-      <Card />
-      <Card temporaryHideMedia />
-      <Card temporaryHideMedia />
-      <Card temporaryHideMedia />
-      <Card temporaryHideMedia />
+      {cards?.map((card) => (
+        <Card key={card._id} card={card} />
+      ))}
     </Box>
   )
 }
