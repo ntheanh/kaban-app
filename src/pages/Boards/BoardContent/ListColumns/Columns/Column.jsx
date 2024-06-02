@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 import Typography from "@mui/material/Typography"
 import Divider from "@mui/material/Divider"
@@ -18,7 +19,7 @@ import DragHandleIcon from "@mui/icons-material/DragHandle"
 import Box from "@mui/material/Box"
 import ListCards from "./ListCards/ListCards"
 
-const Column = () => {
+const Column = ({ column }) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => setAnchorEl(event.currentTarget)
@@ -49,7 +50,7 @@ const Column = () => {
           variant="h6"
           sx={{ fontWeight: "bold", cursor: "pointer", fontSize: "1rem" }}
         >
-          Column Title
+          {column.title}
         </Typography>
         <Tooltip title="More Option">
           <Box>
@@ -111,7 +112,7 @@ const Column = () => {
           </Box>
         </Tooltip>
       </Box>
-      <ListCards />
+      <ListCards cards={column?.cards} />
       <Box
         sx={{
           height: (theme) => theme.trelloCustom.columnFooterHeight,

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Box from "@mui/material/Box"
 import Chip from "@mui/material/Chip"
 import DashboardIcon from "@mui/icons-material/Dashboard"
@@ -7,10 +8,8 @@ import LeaderboardIcon from "@mui/icons-material/Leaderboard"
 import TableViewIcon from "@mui/icons-material/TableView"
 import Avatar from "@mui/material/Avatar"
 import AvatarGroup from "@mui/material/AvatarGroup"
-// import PersonAddIcon from "@mui/icons-material/PersonAdd"
 import Tooltip from "@mui/material/Tooltip"
-
-// import Button from "@mui/material/Button"
+import { capitalizeFirstLetter } from "~/utils/formatters"
 
 const MENU_STYLES = {
   color: "white",
@@ -25,7 +24,7 @@ const MENU_STYLES = {
   }
 }
 
-const BoardBar = () => {
+const BoardBar = ({ board }) => {
   return (
     <Box
       sx={{
@@ -46,14 +45,14 @@ const BoardBar = () => {
           sx={MENU_STYLES}
           clickable
           icon={<DashboardIcon />}
-          label="Project management"
+          label={board?.title}
         />
 
         <Chip
           sx={MENU_STYLES}
           clickable
           icon={<VpnLockIcon />}
-          label="Public/Private"
+          label={capitalizeFirstLetter(board?.type)}
         />
         <Chip
           sx={MENU_STYLES}
