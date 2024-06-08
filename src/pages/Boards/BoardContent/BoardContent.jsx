@@ -2,7 +2,7 @@
 import Box from "@mui/material/Box"
 import ListColumns from "./ListColumns/ListColumns"
 import { mapOrder } from "~/utils/sorts"
-<<<<<<< HEAD
+
 import {
   DndContext,
   PointerSensor,
@@ -11,15 +11,12 @@ import {
   useSensor,
   useSensors
 } from "@dnd-kit/core"
-=======
-import { DndContext } from "@dnd-kit/core"
->>>>>>> master
+
 import { useEffect, useState } from "react"
 import { arrayMove } from "@dnd-kit/sortable"
 // import { arrayMove } from "@dnd-kit/sortable"
 
 const BoardContent = ({ board }) => {
-<<<<<<< HEAD
   // BUG Drag Drop
   // const pointerSensor = useSensor(PointerSensor, {
   //   activationConstraint: {
@@ -41,10 +38,7 @@ const BoardContent = ({ board }) => {
   const sensor = useSensors(mouseSensor, touchSensor)
 
   const [orderedColumns, setOrderColumns] = useState([])
-=======
-  const [orderedColumns, setOrderColumns] = useState([])
 
->>>>>>> master
   useEffect(() => {
     const orderedColumns = mapOrder(
       board?.columns,
@@ -59,7 +53,6 @@ const BoardContent = ({ board }) => {
     console.log("handleDragEnd:", event)
     const { active, over } = event
 
-<<<<<<< HEAD
     if (!over) return
     if (active.id !== over.id) {
       // setOrderColumns((orderedColumns) => {
@@ -81,18 +74,6 @@ const BoardContent = ({ board }) => {
   }
   return (
     <DndContext onDragEnd={handleDragEnd} sensors={sensor}>
-=======
-    if (active.id !== over.id) {
-      setOrderColumns((orderedColumns) => {
-        const oldIndex = orderedColumns.findIndex((c) => c._id === active.id)
-        const newIndex = orderedColumns.findIndex((c) => c._id === over.id)
-        return arrayMove(orderedColumns, oldIndex, newIndex)
-      })
-    }
-  }
-  return (
-    <DndContext onDragEnd={handleDragEnd}>
->>>>>>> master
       <Box
         sx={{
           bgcolor: (theme) =>
